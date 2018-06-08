@@ -10,6 +10,10 @@ int main(int argc, char** argv)
 
   avt_vimba_camera::MonoCamera mc(nh,nhp);
 
-  ros::spin();
+//  ros::spin();
+  ros::AsyncSpinner spinner(6); // Use 6 threads
+  spinner.start();
+  ros::waitForShutdown();
+
   return 0;
 }
