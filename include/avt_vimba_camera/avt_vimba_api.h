@@ -145,6 +145,8 @@ class AvtVimbaApi {
     else if (pixel_format == VmbPixelFormatBgra8          ) encoding = sensor_msgs::image_encodings::BGRA8;
     else if (pixel_format == VmbPixelFormatRgb12          ) encoding = sensor_msgs::image_encodings::TYPE_16UC3;
     else if (pixel_format == VmbPixelFormatRgb16          ) encoding = sensor_msgs::image_encodings::TYPE_16UC3;
+    else if (pixel_format == VmbPixelFormatYuv411	  ) encoding = sensor_msgs::image_encodings::BAYER_GRBG8;
+    else if (pixel_format == VmbPixelFormatYuv422         ) encoding = sensor_msgs::image_encodings::YUV422;
     else
       ROS_WARN("Received frame with unsupported pixel format %d", pixel_format);
     if (encoding == "") return false;
