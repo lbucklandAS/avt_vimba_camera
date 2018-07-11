@@ -361,7 +361,7 @@ void AvtVimbaCamera::frameCallback(const FramePtr vimba_frame_ptr) {
   boost::thread thread_callback = boost::thread(userFrameCallback, vimba_frame_ptr);
   
 // remove join
-//  thread_callback.join();
+  thread_callback.join();
 
   updater_.update();
 }
